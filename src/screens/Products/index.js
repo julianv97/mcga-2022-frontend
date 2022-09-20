@@ -1,14 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import Button from '../../components/Button';
+import Link from '../../components/Link';
 import styles from './products.module.css';
 
 const Products = () => {
-  const navigate = useNavigate()
   return (
     <div className={styles.container}>
       <div>Productos</div>
-      <Button text={'Cerrar sesión'} onClick={() => navigate("/login")} />
+      <Link text={'Cerrar sesión'} to={'/login'} />
       <a href="/login">Esto recarga la página</a>
     </div>
   );
