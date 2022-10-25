@@ -1,17 +1,27 @@
-import { SAVE_DATA, GET_DATA, DELETE_DATA } from './types';
+import { SAVE_DATA_FULLFILLED, SAVE_DATA_LOADING, SAVE_DATA_REJECTED, DELETE_DATA } from './types';
 
 export const saveData = (data) => {
   return {
-    type: SAVE_DATA,
-    payload: data
+    type: SAVE_DATA_FULLFILLED,
+    payload: data,
   };
 };
 
-export const getData = () => {
-    return {
-        type: GET_DATA,
-    };
-}
+export const saveDataLoading  = (isLoading) => {
+  return {
+    type: SAVE_DATA_LOADING,
+    payload: isLoading,
+  };
+};
+
+
+export const saveDataError = () => {
+  return {
+    type: SAVE_DATA_REJECTED,
+  };
+};
+
+
 
 export const deleteData = (id) => {
     return {
